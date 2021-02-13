@@ -1,0 +1,53 @@
+/*
+* Exclusivo para definições de quebras de layout
+*/
+
+$min-mobile: 320px;
+$max-mobile: 767px;
+$min-tablet: 768px;
+$max-tablet: 950px;
+$min-desktop: 951px;
+$max-desktop: 1280px;
+$min-desktop-full-hd: 1281px;
+
+@mixin min-mobile {
+  @media (min-width: $min-mobile) {
+    @content;
+  }
+}
+
+@mixin max-mobile {
+  @media (max-width: $max-mobile) {
+    @content;
+  }
+}
+
+@mixin min-tablet {
+  @media (min-width: $min-tablet) {
+    @content;
+  }
+}
+
+@mixin max-tablet {
+  @media (max-width: $max-tablet) {
+    @content;
+  }
+}
+
+@mixin min-desktop {
+  @media (min-width: $min-desktop) {
+    @content;
+  }
+}
+
+@mixin max-desktop {
+  @media (max-width: $max-desktop) {
+    @content;
+  }
+}
+
+@mixin min-desktop-full-hd {
+  @media (min-width: $min-desktop-full-hd) {
+    @content;
+  }
+}
