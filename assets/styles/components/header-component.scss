@@ -2,15 +2,82 @@
 @import '../globals';
 @import '../breakpoints';
 
-.logo {
-  width: 200px;
-  height: 50px;
-}
 
 header {
+  background-color: #fff;
 
-  div {
-    display: flex;
-    flex-direction: row;
+  .logo {
+    svg {
+      width: 60px;
+      height: 60px;
+
+      @include min-tablet {
+        width: 200px;
+      }
+    }
+
+    #logo-desktop {
+      display: none;
+
+      @include min-tablet {
+        display: block;
+      }
+    }
+
+    #logo-mobile {
+      display: block;
+
+      @include min-tablet {
+        display: none;
+      }
+    }
+  }
+
+  .content-header {
+    @include flex();
+    @include flex-direction(row);
+
+    @include min-desktop {
+      margin: auto;
+      width: 50%;
+      padding: 20px;
+
+    }
+
+    >div {
+      @include flex-direction(row);
+      padding: 25px;
+      align-self: center;
+      flex-grow: 1;
+
+      &:last-child {
+        @include flex();
+        @include flex-direction(row);
+        @include justify-content(flex-end);
+        flex-grow: 4;
+
+      }
+    }
+  }
+
+  #menu {
+    @include min-tablet {
+      display: none;
+    }
+  }
+
+  .social-media {
+    >a>i::before {
+      font-size: 40px;
+    }
+  }
+
+  .links {
+    display: none;
+    padding-right: 50px;
+
+    @include min-tablet {
+      @include flex();
+    }
   }
 }

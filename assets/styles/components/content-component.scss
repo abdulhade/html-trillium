@@ -1,0 +1,97 @@
+.content {
+  @include flex();
+  @include flex-direction(column);
+
+  div {
+    @include flex();
+    @include flex-direction(column);
+  }
+
+  padding: 15px;
+
+  @include min-desktop {
+    margin: auto;
+    width: 50%;
+    padding: 20px;
+  }
+
+  .step-view {
+    .mobile {
+      @include flex();
+
+      @include min-tablet {
+        display: none;
+      }
+
+    }
+
+    .desktop {
+      display: none;
+
+      @include min-tablet {
+        @include flex();
+
+      }
+    }
+  }
+
+  .steps {
+    width: 100%;
+    color: #ffffff;
+
+    @include flex();
+    @include flex-direction(column);
+
+    @include min-tablet {
+
+      div {
+        @include flex-direction(row);
+        width: 40%;
+      }
+    }
+  }
+
+  .progress-indicator {
+    @include flex();
+    border-radius: 50%;
+    -webkit-transform: translate(50%, 50%);
+    transform: translate(50%, 50%);
+    width: 100px;
+    height: 100px;
+    background: $secondary-color;
+
+    &.progress-30 {
+      background-image: -webkit-linear-gradient(108deg, #ddd 50%, transparent 50%), -webkit-linear-gradient(left, $secondary-color 50%, #ddd 50%);
+      background-image: linear-gradient(-18deg, #ddd 50%, transparent 50%), linear-gradient(90deg, $secondary-color 50%, #ddd 50%);
+    }
+
+    &.progress-40 {
+      background-image: -webkit-linear-gradient(144deg, #ddd 50%, transparent 50%), -webkit-linear-gradient(left, $secondary-color 50%, #ddd 50%);
+      background-image: linear-gradient(-54deg, #ddd 50%, transparent 50%), linear-gradient(90deg, $secondary-color 50%, #ddd 50%);
+    }
+
+    .overlay {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      margin: auto;
+      background: $primary-color;
+      text-align: center;
+      padding-top: 30%;
+    }
+  }
+
+  .navigation {
+    @include flex();
+    @include flex-direction(row);
+
+    div {
+      flex-grow: 1;
+      padding: 40px 20px;
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+}
