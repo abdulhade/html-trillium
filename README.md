@@ -5,6 +5,7 @@
 - git clone https://github.com/abdulhade/html-trillium.git
 - npm install
 - npm run dev
+- open: http://localhost:3000/
 
 
 
