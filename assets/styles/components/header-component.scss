@@ -36,12 +36,12 @@ header {
   .content-header {
     @include flex();
     @include flex-direction(row);
+    flex: 50%;
 
     @include min-desktop {
       margin: auto;
-      width: 50%;
+      width: 80%;
       padding: 20px;
-
     }
 
     >div {
@@ -78,6 +78,10 @@ header {
 
     @include min-tablet {
       @include flex();
+
+      a {
+        padding: 10px;
+      }
     }
   }
 }

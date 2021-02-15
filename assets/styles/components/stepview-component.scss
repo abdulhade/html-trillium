@@ -1,0 +1,69 @@
+.step-view {
+  .mobile {
+    @include flex();
+    @include flex-direction(row);
+    align-items: baseline;
+
+    .progress-indicator {
+      width: 90px;
+      height: 90px;
+    }
+
+    @include min-tablet {
+      display: none;
+    }
+  }
+
+  .desktop {
+    display: none;
+    border-bottom: 1px solid #eee5e5;
+    padding-bottom: 20px;
+
+    .progress-indicator {
+      height: auto;
+    }
+
+    @include min-tablet {
+      @include flex();
+
+    }
+  }
+}
+
+.progress {
+
+  &-label {
+
+    padding: 0 20px;
+
+    h4 {
+      margin: 0;
+    }
+  }
+
+  &-indicator {
+    @include flex();
+    border-radius: 50%;
+
+
+    &.progress-30 {
+      background-image: -webkit-linear-gradient(108deg, #ddd 50%, transparent 50%), -webkit-linear-gradient(left, $secondary-color 50%, #ddd 50%);
+      background-image: linear-gradient(0deg, #ddd 50%, transparent 50%), linear-gradient(-90deg, $secondary-color 50%, #ddd 50%);
+    }
+
+    &.progress-40 {
+      background-image: -webkit-linear-gradient(144deg, #ddd 50%, transparent 50%), -webkit-linear-gradient(left, $secondary-color 50%, #ddd 50%);
+      background-image: linear-gradient(70deg, #ddd 50%, transparent 50%), linear-gradient(-90deg, $secondary-color 50%, #ddd 50%);
+    }
+
+    .overlay {
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      margin: auto;
+      background: $primary-color;
+      text-align: center;
+      padding-top: 30%;
+    }
+  }
+}

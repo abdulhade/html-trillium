@@ -43,7 +43,6 @@
   margin: 0;
   padding: 0;
   font-size: 80%;
-  text-transform: uppercase;
   margin-bottom: 1em;
 
   >li {
@@ -55,8 +54,9 @@
     margin: 0;
     position: relative;
     text-overflow: ellipsis;
-    color: $pw-incomplete;
-    display: block;
+    color: #fff;
+    @include flex();
+    @include flex-direction(column);
 
     &:hover {
       color: darken($pw-incomplete, $pw-darken-amount);
@@ -64,13 +64,23 @@
   }
 
   >li .bubble {
-    border-radius: 1000px;
+    @include flex();
+    @include flex-direction(column);
+    border-radius: 50%;
     width: $pw-bubble-size;
     height: $pw-bubble-size;
     background-color: $pw-incomplete;
-    display: block;
     margin: 0 auto 0.5em auto;
     border-bottom: $pw-border-thickness solid darken($pw-incomplete, 20%);
+    z-index: 1;
+
+    .overlay {
+      width: 15px;
+      height: 15px;
+      z-index: 1;
+      padding: 0;
+      margin: auto;
+    }
   }
 
   // line connectors
@@ -114,6 +124,12 @@
 
     .bubble {
       @include bubble-style($pw-complete);
+
+      .overlay {
+        width: 10px;
+        height: 10px;
+        z-index: 1;
+      }
     }
   }
 
@@ -141,7 +157,9 @@
     >li {
       text-indent: -10px;
       text-align: center;
-      display: block;
+      @include flex();
+      @include flex-direction(column);
+      flex-grow: 1;
     }
 
     >li .bubble:before,
